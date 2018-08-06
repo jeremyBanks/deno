@@ -11,6 +11,16 @@ export const globalEval = eval;
 // TODO The underscore is because it's conflicting with @types/node.
 export const window = globalEval("this");
 
+// The built-in libdeno functions are moved out of the global variable.
+type MessageCallback = (msg: Uint8Array) => void;
+interface Libdeno {
+  recv(cb: MessageCallback): void;
+  send(msg: ArrayBufferView): null | Uint8Array;
+  print(x: string): void;
+}
+export const libdeno = window["deno"] as Libdeno;
+window["deno"] = null;
+
 window["window"] = window; // Create a window object.
 // import "./url";
 
@@ -21,7 +31,7 @@ window["window"] = window; // Create a window object.
 // window["clearInterval"] = timer.clearTimer;
 
 import { Console } from "./console";
-window["console"] = new Console();
+window["console"] = new Console(libdeno.print);
 
 // import { fetch } from "./fetch";
 // window["fetch"] = fetch;
