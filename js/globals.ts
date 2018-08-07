@@ -1,4 +1,7 @@
 // Copyright 2018 the Deno authors. All rights reserved. MIT license.
+// tslint:disable-next-line:no-reference
+/// <reference path="./text_encoding.d.ts" />
+import { TextEncoder, TextDecoder } from "text-encoding";
 
 // If you use the eval function indirectly, by invoking it via a reference
 // other than eval, as of ECMAScript 5 it works in the global scope rather than
@@ -36,6 +39,5 @@ window["console"] = new Console(libdeno.print);
 // import { fetch } from "./fetch";
 // window["fetch"] = fetch;
 
-// import { TextEncoder, TextDecoder } from "text-encoding";
-// window["TextEncoder"] = TextEncoder;
-// window["TextDecoder"] = TextDecoder;
+window["TextEncoder"] = TextEncoder;
+window["TextDecoder"] = TextDecoder;

@@ -5,6 +5,7 @@
 /// <reference no-default-lib="true"/>
 
 /// <reference lib="esnext" />
+/// <reference lib="dom" />
 
 // TODO generate `console.d.ts` and inline it in `assets.ts` and remove
 // declaration of `Console`

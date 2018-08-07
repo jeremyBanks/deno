@@ -8,7 +8,7 @@
 import denoDts from "/js/deno.d.ts!string";
 // import libDts from "/third_party/node_modules/typescript/lib/lib.d.ts!string";
 import libDenoDts from "/js/lib.deno.d.ts!string";
-// import libDomD qts from "/third_party/node_modules/typescript/lib/lib.dom.d.ts!string";
+import libDomDts  from "/third_party/node_modules/typescript/lib/lib.dom.d.ts!string";
 // import libDomIterableDts from "/third_party/node_modules/typescript/lib/lib.dom.iterable.d.ts!string";
 import libEs2015Dts from "/third_party/node_modules/typescript/lib/lib.es2015.d.ts!string";
 import libEs2015CollectionDts from "/third_party/node_modules/typescript/lib/lib.es2015.collection.d.ts!string";
@@ -47,7 +47,7 @@ export const assetSourceCode: { [key: string]: string } = {
   "deno.d.ts": denoDts,
   // "lib.d.ts": libDts,
   "lib.deno.d.ts": libDenoDts,
-  // "lib.dom.d.ts": libDomDts,
+  "lib.dom.d.ts": libDomDts,
   // "lib.dom.iterable.d.ts": libDomIterableDts,
   "lib.es2015.collection.d.ts": libEs2015CollectionDts,
   "lib.es2015.core.d.ts": libEs2015CoreDts,
