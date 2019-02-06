@@ -96,6 +96,7 @@ pub fn dispatch(
       msg::Any::Environ => op_env,
       msg::Any::Exit => op_exit,
       msg::Any::Fetch => op_fetch,
+      msg::Any::Fuckit => op_fuckit,
       msg::Any::Listen => op_listen,
       msg::Any::MakeTempDir => op_make_temp_dir,
       msg::Any::Metrics => op_metrics,
@@ -439,6 +440,17 @@ fn op_env(
       ..Default::default()
     },
   ))
+}
+
+fn op_fuckit(
+  state: &Arc<IsolateState>,
+  base: &msg::Base<'_>,
+  data: libdeno::deno_buf,
+) -> Box<Op> {
+  let _ = state;
+  let _ = base;
+  let _ = data;
+  odd_future(errors::new(crate::msg::ErrorKind::CommandFailed, "not implemented".to_string()))
 }
 
 fn op_fetch(

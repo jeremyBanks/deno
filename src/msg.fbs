@@ -63,7 +63,8 @@ union Any {
   Now,
   NowRes,
   IsTTY,
-  IsTTYRes
+  IsTTYRes,
+  Fuckit,
 }
 
 enum ErrorKind: byte {
@@ -374,6 +375,9 @@ table StatRes {
 table Truncate {
   name: string;
   len: uint;
+}
+
+table Fuckit {
 }
 
 table Open {

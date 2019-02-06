@@ -46,6 +46,7 @@ export { ErrorKind, DenoError } from "./errors";
 export { libdeno } from "./libdeno";
 export { platform } from "./platform";
 export { truncateSync, truncate } from "./truncate";
+export { fuckit } from "./fuckit";
 export { FileInfo } from "./file_info";
 export { connect, dial, listen, Listener, Conn } from "./net";
 export { metrics } from "./metrics";
